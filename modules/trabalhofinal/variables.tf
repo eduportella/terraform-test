@@ -28,7 +28,6 @@ variable "TURMA_BUCKET" {
  default = "lab-fiap-SUA TURMA-SEU RM"
 }
 
-
 variable "project" {
   default = "lab-fiap"
 }
@@ -39,4 +38,8 @@ variable "nomeGrupo" {
 
 variable "env" {
   default = "dev"
+}
+
+variable "vpc_cidr" {
+  default = "9.0.0.0/16"
 }
