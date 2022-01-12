@@ -28,7 +28,7 @@ resource "random_shuffle" "random_subnet" {
 }
 
 resource "aws_elb" "web" {
-  name = "Elb - ${terraform.workspace} "
+  name = "${format("ELB-${terraform.workspace}")}"
 
   subnets         = data.aws_subnet_ids.all.ids
   security_groups = ["${aws_security_group.allow-ssh.id}"]
