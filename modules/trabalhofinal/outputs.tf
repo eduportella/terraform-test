@@ -7,11 +7,3 @@ output "address" {
 output "elb_public" {
   value = "${aws_elb.web.dns_name}"
 }
-
-output "filename" {
-  value = "${module.localfile.filename}"
-}
-
-output "content" {
-  value = "${module.localfile.content}"
-}
