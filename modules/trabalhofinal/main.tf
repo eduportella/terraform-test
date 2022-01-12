@@ -3,6 +3,12 @@ provider "aws" {
   region = "${var.aws_region}"  
 }
 
+data "aws_vpc" "vpc" {
+  tags = {
+    Name = "${var.project}"
+  }
+}
+
 data "aws_subnet_ids" "all" {
   vpc_id = "${data.aws_vpc.vpc.id}"
 
