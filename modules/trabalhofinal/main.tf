@@ -84,3 +84,14 @@ resource "aws_instance" "web" {
     Name = "${format("nginx-${terraform.workspace}-%03d", count.index + 1)}"
   }
 }
+
+resource "aws_vpc" "vpc_created" {
+  cidr_block         = "${var.vpc_cidr}"
+  enable_dns_support = "true"
+  enable_dns_hostnames = "true"  
+
+  tags = {
+    Name = "${var.project}"
+    env  = "${var.env}"
+  }
+}
