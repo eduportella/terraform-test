@@ -3,10 +3,6 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
-variable "project" {
-  default = "fiap-lab"
-}
-
 data "aws_vpc" "vpc" {
   tags = {
     Name = "${var.project}"
