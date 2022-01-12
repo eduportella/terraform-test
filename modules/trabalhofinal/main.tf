@@ -1,6 +1,6 @@
 # Specify the provider and access details
 provider "aws" {
-  region = "${var.aws_region}"
+  region = "${var.aws_region}"  
 }
 
 data "aws_vpc" "vpc" {
@@ -82,13 +82,5 @@ resource "aws_instance" "web" {
 
   tags = {
     Name = "${format("nginx-${terraform.workplace}-%03d", count.index + 1)}"
-  }
-}
-
-terraform {
-  backend "s3" {
-    bucket = "${var.TURMA_BUCKET}"
-    key    = "teste"
-    region = "us-east-1"
   }
 }
